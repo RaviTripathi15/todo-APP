@@ -1,64 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
-    <link  rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-     
+
     <div class="container">
         <div class="header">
             <div class="search-bar">
-            <i class="fas fa-search" style="color: red;"></i>
-             <input type="text" placeholder="search for any training you want">    
+                <i class="fas fa-search" style="color: red;"></i>
+                <input type="text" placeholder="search for any training you want">
             </div>
             <div class="header-icons">
                 <button class="icon-btn" type="button" title="Open menu">
                     <i class="fas fa-bell"></i>
-                     <span class="notification-dot"></span>
+                    <span class="notification-dot"></span>
                 </button>
                 <button class="icon-btn" type="button" title="Open menu">
                     <i class="fas fa-bell"></i>
-                 </button>
-                 
-                </div>
+                </button>
+
             </div>
-            
-            <div class="main-content">
-                <div class="title-section">
+        </div>
+
+        <div class="main-content">
+            <div class="title-section">
                 <div class="greeting" id="greeting"></div>
-                        <h1>You 've got <span class="task-count" id="taskcount">0</span> 
-                            task count today
-                            <button class="add-btn" onclick="openModal()" type="button" title="Add task">
-                                <i class="fas fa-plus"></i> Add New
-                            </button>
-                        </h1>
-                    </div>
-                
-                <div class="section">
-                    <div class="section-header"><h2>On Hold</h2></div>
-                    <div id="onHoldTasks">
-                        <div class="task-item">
-                            <div class="task-checkbox" onclick="toggleTask()"></div>
-                            <div class="tas-content">
-                                <div class="task-title"></div>
-                            </div>
-                        </div>
-                    </div>
+                <h1>You 've got <span class="task-count" id="taskcount">0</span>
+                    task count today
+                    <button class="add-btn" onclick="openModal()" type="button" title="Add task">
+                        <i class="fas fa-plus"></i> Add New
+                    </button>
+                </h1>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>On Hold</h2>
                 </div>
+                <div id="onHoldTasks"></div>
 
                 <div class="section">
-                     <div class="section-header">
-                        <h2>Completed</h2> 
+                    <div class="section-header">
+                        <h2>Completed</h2>
                         <span class="badge badge-inactive">Inactive</span>
                     </div>
                     <div id="completedTasks"></div>
                 </div>
             </div>
+
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Result Summary </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Completion Rate</div>
+                        <div class="stat-value" id="completionRateValue">0%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="completionProgress" style="width: 0%;">
+
+                            </div>
+                        </div>
+                    </div>
+
+                     
+                      <div class="stat-card">
+                        <div class="stat-label">Completion Rate</div>
+                        <div class="stat-value" id="completionRateValue">0%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="completionProgress" style="width: 0%;">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
-            
+
         <script src="script.js"></script>
 </body>
+
 </html>
