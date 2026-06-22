@@ -70,9 +70,9 @@
                      
                       <div class="stat-card">
                         <div class="stat-label">Total Tasks</div>
-                        <div class="stat-value" id="totalTasks">0%</div>
+                        <div class="stat-value" id="totalTasks">0</div>
                         <div class="progress-bar">
-                            <div class="progress-fill" id="completionProgress" style="width: 0%;">
+                            <div class="progress-fill" id="totalProgress" style="width: 50%;">
 
                             </div>
                         </div>
@@ -94,7 +94,47 @@
             </div>
         </div>
 
+
+
+        <div class="modal" id="taskModal">
+            <div class="model-content">
+                <h2 class="modal-header">Add / Update Task</h2>
+                <form id="taskForm" autocomplete="off">
+                    <div class="form-group">
+                        <label> Task Title</label>
+                        <input type="text" id="taskTitle" placeholder="Enter task title" required>
+                    </div>
+               
+                   <div class="form-group">
+                       <label>Status</label>
+                        <select id="taskStatus" title="Task status">
+                            <option value="pending">Pending</option>
+                            <option value="progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>              
+                   </div> 
+                   
+                   <div class="form-group">
+                       <label>Priority</label>
+                        <select id="taskPriority" title="Task status">
+                            <option value="minor">Minor</option>
+                            <option value="normal">Normal</option>
+                            <option value="critical">Critical</option>
+                        </select>              
+                   </div> 
+
+                   <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()" title="Save task">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-primary" title="submit task"></button>
+                   </div>
+                </form>
+            </div>
+        </div>
+
         <script src="script.js"></script>
 </body>
 
 </html>
+
